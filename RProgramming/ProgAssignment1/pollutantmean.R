@@ -4,10 +4,12 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   list_files <- lapply(filelist, read.csv)
   
   # now get info on pollutant in these files
-  # first get all information combined, before calculating mean
+  # first get all information
   info_poll <- lapply(list_files,"[[",pollutant)
-  # put everything in one big vector
+
+  # put everything in one big vector as we want the mean of everything
   info_poll_vec <- unlist(info_poll)
-  # compute mean, ignore NA values and output in specified precision 
+  
+  # compute mean, ignore NA values 
   mean(info_poll_vec,na.rm=TRUE)
 }
