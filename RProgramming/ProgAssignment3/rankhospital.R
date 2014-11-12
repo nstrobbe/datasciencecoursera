@@ -18,7 +18,6 @@ rankhospital <- function(state, outcome, num = "best") {
         stop("invalid outcome")
     }
     
-    ## Return hospital name in that state with the given rank
-    ## 30-day death rate
+    ## Return hospital name in state with the given rank for given outcome
     getRankInState(state,all.data,outcomes.nr[outcome],num)
 }
